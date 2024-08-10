@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33b845d83d163046c0b4e81466050c1b",
+    "content-hash": "ee05207b533641458439fb83c95dba83",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2334,6 +2334,32 @@
                 "source": "https://github.com/mck89/peast/tree/v1.16.3"
             },
             "time": "2024-07-23T14:00:32+00:00"
+        },
+        {
+            "name": "mediacurrent/rain",
+            "version": "4.0",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/mediacurrent/rain.git",
+                "reference": "2b002f3af585636fda52c0c03a3e63a76c1d3f4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/mediacurrent/rain/get/2b002f3af585636fda52c0c03a3e63a76c1d3f4b.zip",
+                "reference": "2b002f3af585636fda52c0c03a3e63a76c1d3f4b",
+                "shasum": ""
+            },
+            "type": "drupal-profile",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Rain install profile",
+            "homepage": "https://bitbucket.org/mediacurrent/rain",
+            "support": {
+                "source": "https://bitbucket.org/mediacurrent/rain/src/2b002f3af585636fda52c0c03a3e63a76c1d3f4b/?at=4.0"
+            },
+            "time": "2022-03-30T00:08:04+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -11393,7 +11419,7 @@
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.1"
+        "php": "8.2.0"
     },
     "plugin-api-version": "2.6.0"
 }
