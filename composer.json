@@ -3,16 +3,44 @@
     "description": "Install Drupal 9 with Composer on Pantheon.",
     "type": "project",
     "license": "MIT",
-    "repositories": [
-        {
+    "repositories": {
+        "commerce_demo": {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/project/commerce_demo.git"
+        },
+        "jquery-ui-touch-punch": {
+            "type": "package",
+            "package": {
+                "name": "furf/jquery-ui-touch-punch",
+                "version": "0.2.3",
+                "type": "drupal-library",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/furf/jquery-ui-touch-punch/archive/4bc009145202d9c7483ba85f3a236a8f3470354d.zip"
+                }
+            }
+        },
+        "select2": {
+            "type": "package",
+            "package": {
+                "name": "select2/select2",
+                "version": "4.1.0-rc.0",
+                "type": "drupal-library",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/select2/select2/archive/refs/tags/4.1.0-rc.0.zip"
+                }
+            }
+        },
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "pantheon-upstream": {
             "type": "path",
             "url": "upstream-configuration"
         }
-    ],
+    },
     "require": {
         "pantheon-upstreams/upstream-configuration": "dev-main",
         "composer/installers": "^1.9",
@@ -21,15 +49,23 @@
         "pantheon-systems/drupal-integrations": "^10",
         "cweagans/composer-patches": "^1.7",
         "drush/drush": "^11 || ^12",
-        "mediacurrent/rain": "^4.0"
+        "centarro/certified-projects": "^1.0",
+        "centarro/commerce_kickstart": "^3.0",
+        "drupal/commerce_demo": "^3.0",
+        "drupal/core-project-message": "^10",
+        "drupal/default_content": "^2",
+        "vlucas/phpdotenv": "^5.1",
+        "webflo/drupal-finder": "^1.2",
+        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "drupal/core-dev": "^10"
+        "drupal/core-dev": "^10",
+        "zaporylie/composer-drupal-optimizations": "^1.2"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "RC",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "drupal-scaffold": {
@@ -59,29 +95,66 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
-        "enable-patching": true
+        "enable-patching": true,
+        "drupal-core-project-message": {
+            "include-keys": ["homepage", "support"],
+            "post-create-project-cmd-message": [
+                "<bg=magenta;fg=white>                                                      </>",
+                "<bg=magenta;fg=white>  Congratulations, you installed Commerce Kickstart!  </>",
+                "<bg=magenta;fg=white>                                                      </>",
+                "",
+                "<bg=yellow;fg=black>Next steps</>:",
+
+                "  * Install the site: https://www.drupal.org/docs/installing-drupal",
+                "  * Read the Drupal Commerce docs: https://docs.drupalcommerce.org/commerce2",
+                "  * Get support: https://drupal.stackexchange.com/",
+                "  * Get involved with the Drupal community:",
+                "      https://www.drupal.org/getting-involved",
+                "  * Remove the plugin that prints this message:",
+                "      composer remove drupal/core-project-message"
+            ]
+        }
     },
     "autoload": {
-        "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
+        "classmap": [
+            "scripts/composer/ScriptHandler.php",
+            "upstream-configuration/scripts/ComposerScripts.php"
+        ],
+        "files": ["load.environment.php"]
     },
     "scripts": {
-        "pre-update-cmd": ["DrupalComposerManaged\\ComposerScripts::preUpdate"],
-        "post-update-cmd": ["DrupalComposerManaged\\ComposerScripts::postUpdate"]
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion",
+            "DrupalComposerManaged\\ComposerScripts::preUpdate"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalComposerManaged\\ComposerScripts::postUpdate"
+        ]
     },
     "config": {
+        "bin-dir": "bin",
         "preferred-install": "dist",
-        "sort-packages": false,
         "platform": {
             "php": "8.2.0"
         },
+        "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "johnpbloch/wordpress-core-installer": true,
-            "zaporylie/composer-drupal-optimizations": true,
+            "drupal/core-project-message": true,
+            "oomphinc/composer-installers-extender": true,
             "phpstan/extension-installer": true,
+            "zaporylie/composer-drupal-optimizations": true,
             "php-http/discovery": true
         }
     }
