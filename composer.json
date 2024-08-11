@@ -44,6 +44,11 @@
     "require": {
         "pantheon-upstreams/upstream-configuration": "dev-main"
     },
+    "autoload": {
+        "classmap": [
+            "upstream-configuration/scripts/ComposerScripts.php"
+        ]
+    },
     "minimum-stability": "dev",
     "extra": {
         "patches": {
@@ -52,8 +57,7 @@
             }
         },
         "patchLevel": {
-            "drupal/core": "-p2",
-            "drupal/default_content": "-p1"
+            "drupal/core": "-p2"
         },
         "enable-patching": true
     },
