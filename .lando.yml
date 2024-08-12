@@ -1,0 +1,6 @@
+name: d10-commerce-kickstart-base
+recipe: pantheon
+config:
+  framework: drupal8
+  site: d10-commerce-kickstart-base
+  id: 8fb0f9b7-1fe2-47eb-ac23-e22a54ec5845
