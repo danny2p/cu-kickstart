@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c166f5fb4dd9de57d3e5cff2447d3766",
+    "content-hash": "9bfe5a4913272fa12e55b59bfb29579f",
     "packages": [
         {
             "name": "apimatic/core",
@@ -7652,6 +7652,49 @@
             "time": "2021-12-15T12:32:42+00:00"
         },
         {
+            "name": "pantheon-systems/drupal-integrations",
+            "version": "11.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pantheon-systems/drupal-integrations.git",
+                "reference": "94ba178d7a66f677cf5178b33c5bb95d50064857"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pantheon-systems/drupal-integrations/zipball/94ba178d7a66f677cf5178b33c5bb95d50064857",
+                "reference": "94ba178d7a66f677cf5178b33c5bb95d50064857",
+                "shasum": ""
+            },
+            "conflict": {
+                "drupal/core": "<10"
+            },
+            "type": "project",
+            "extra": {
+                "drupal-scaffold": {
+                    "file-mapping": {
+                        "[project-root]/.drush-lock-update": "assets/drush-lock-update",
+                        "[web-root]/sites/default/default.services.pantheon.preproduction.yml": "assets/default.services.pantheon.preproduction.yml",
+                        "[web-root]/sites/default/settings.pantheon.php": "assets/settings.pantheon.php",
+                        "[web-root]/sites/default/settings.php": {
+                            "mode": "replace",
+                            "path": "assets/initial.settings.php",
+                            "overwrite": false
+                        }
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Add this project to any Drupal distribution based on drupal/core-composer-scaffold to enable it for use on Pantheon.",
+            "support": {
+                "issues": "https://github.com/pantheon-systems/drupal-integrations/issues",
+                "source": "https://github.com/pantheon-systems/drupal-integrations/tree/11.x"
+            },
+            "time": "2024-04-24T20:09:54+00:00"
+        },
+        {
             "name": "pantheon-systems/upstream-management",
             "version": "dev-main",
             "source": {
@@ -7709,7 +7752,7 @@
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
-                "reference": "04314b55e7386c30a20cfc016ea33a7ed116f8cd"
+                "reference": "9361b9c38c18bdd23e1f7c1c4b9a161a4129b3e9"
             },
             "require": {
                 "centarro/certified-projects": "^1.0",
@@ -7722,6 +7765,7 @@
                 "drupal/core-recommended": "^11",
                 "drupal/default_content": "^2",
                 "drush/drush": "^13",
+                "pantheon-systems/drupal-integrations": "^11",
                 "pantheon-systems/upstream-management": "*",
                 "vlucas/phpdotenv": "^5.1",
                 "webflo/drupal-finder": "^1.2",
