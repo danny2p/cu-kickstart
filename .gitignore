@@ -111,3 +111,5 @@ config/*
 /update.php
 /web.config
 README.md
+
+/recipes

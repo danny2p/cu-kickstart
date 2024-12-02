@@ -2,8 +2,8 @@ name: Autopilot Trigger Demo Module
 type: module
 description: Just here to allow an upstream to make a change to trigger VRT failure
 package: Custom
-core: 10.x
-core_version_requirement: ^9 || ^10
+core: 11.x
+core_version_requirement: ^9 || ^10 || ^11
 dependencies:
   - drupal:block
 libraries:
