@@ -51,7 +51,9 @@
     },
     "require": {
         "pantheon-upstreams/upstream-configuration": "dev-main",
-        "pantheon-systems/drupal-integrations": "11.x-dev"
+        "pantheon-systems/drupal-integrations": "11.x-dev",
+        "drupal/color": "^2.0@dev",
+        "drupal/tour": "^2.0@dev"
     },
     "autoload": {
         "classmap": [
