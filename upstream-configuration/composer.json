@@ -4,6 +4,7 @@
     "version": "dev-main",
     "require": {
         "pantheon-systems/upstream-management": "*",
+        "pantheon-systems/drupal-integrations": "^11",
         "centarro/certified-projects": "^1.0",
         "centarro/commerce_kickstart": "3.x-dev",
         "drupal/commerce_demo": "3.0.x-dev",
