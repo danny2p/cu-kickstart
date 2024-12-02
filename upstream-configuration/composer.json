@@ -74,7 +74,7 @@
         "bin-dir": "bin",
         "preferred-install": "dist",
         "platform": {
-            "php": "8.2.0"
+            "php": "8.3.0"
         },
         "sort-packages": true
     }
