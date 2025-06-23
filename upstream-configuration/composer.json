@@ -5,9 +5,9 @@
     "require": {
         "pantheon-systems/upstream-management": "*",
         "pantheon-systems/drupal-integrations": "^11",
-        "centarro/certified-projects": "^1.0",
-        "centarro/commerce_kickstart": "3.x-dev",
-        "drupal/commerce_demo": "3.0.x-dev",
+        "centarro/certified-projects": "*",
+        "centarro/commerce_kickstart": "*",
+        "drupal/commerce_demo": "*",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/core-composer-scaffold": "^11",
