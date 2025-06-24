@@ -1,3 +1,3 @@
 <?php
-echo "Just another update";
+echo "Just another update after downgrade";
 ?>
